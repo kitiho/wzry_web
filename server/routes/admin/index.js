@@ -8,6 +8,10 @@ module.exports = app => {
         const model = await Category.create(req.body)
         res.send(model)
     })
+    router.get('/categories',async (req,res)=>{
+        const model = await Category.find()
+        res.send(model)
+    })
 
 
 
