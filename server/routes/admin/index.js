@@ -32,7 +32,14 @@ module.exports = app => {
         res.send(model)
     })
 
-
+    const multer = require('multer')({
+        dest: __dirname + '../../../uploads'
+    })
+    app.post('/admin/api/uploads',multer.single('file'),async (req,res)=>{
+        const file = req.file
+        file.src = `http://localhost:3000/uploads/${file.filename}`
+        res.send(file)
+    })
 
 
     app.use('/admin/api/:resource',async (req,res,next)=>{

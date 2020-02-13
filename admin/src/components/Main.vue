@@ -13,6 +13,14 @@
             <el-menu-item index="/categoryList">分类列表</el-menu-item>
           </el-menu-item-group>
         </el-submenu>
+        <el-submenu index="1">
+          <template slot="title"><i class="el-icon-message"></i>装备管理</template>
+          <el-menu-item-group>
+            <template slot="title">装备</template>
+            <el-menu-item index="/itemCreate">新建装备</el-menu-item>
+            <el-menu-item index="/itemList">装备列表</el-menu-item>
+          </el-menu-item-group>
+        </el-submenu>
       </el-menu>
     </el-aside>
 

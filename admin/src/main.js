@@ -14,7 +14,8 @@ import router from './router'
 import http from './http'
 Vue.prototype.$http = http
 
-
+//引入style.css
+import './assets/style.css'
 Vue.config.productionTip = false
 
 
