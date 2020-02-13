@@ -6,7 +6,8 @@ import CategoryList from './components/views/CategoryList'
 Vue.use(VueRouter)
 
 const routes = [
-  { path: '/categoryEdit', component: CategoryEdit },
+  { path: '/categoryEdit/:id', component: CategoryEdit ,props:true},
+  { path: '/categoryCreate', component: CategoryEdit },
   { path: '/categoryList', component: CategoryList }
 ]
 
