@@ -9,6 +9,16 @@
       <el-form-item label="名称">
         <el-input v-model="model.name"></el-input>
       </el-form-item>
+      <el-form-item label="父级分类">
+        <el-select v-model="model.parent">
+          <el-option
+            v-for="item in parent"
+            :key="item._id"
+            :label="item.name"
+            :value="item._id"
+          ></el-option>
+        </el-select>
+      </el-form-item>
       <el-form-item>
         <el-button
           type="primary"
@@ -23,7 +33,9 @@
 export default {
   data() {
     return {
-      model: {}
+      model: {
+      },
+      parent: {}
     };
   },
   props: {
@@ -46,9 +58,14 @@ export default {
       const res = await this.$http.get(`/categories/${this.id}`);
       console.log(res);
       this.model = res.data;
+    },
+    async fetchParent() {
+      const res = await this.$http.get("/categories");
+      this.parent = res.data;
     }
   },
   created() {
+    this.fetchParent();
     this.id && this.fetch();
   }
 };

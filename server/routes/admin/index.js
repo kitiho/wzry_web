@@ -13,7 +13,7 @@ module.exports = app => {
         res.send(model)
     })
     router.get('/categories',async (req,res)=>{
-        const model = await Category.find()
+        const model = await Category.find().populate('parent')
         res.send(model)
     })
     router.delete('/categories/:id',async (req,res)=>{
