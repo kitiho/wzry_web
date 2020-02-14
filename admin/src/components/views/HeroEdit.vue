@@ -165,7 +165,7 @@
                   :action="$http.defaults.baseURL + '/uploads'"
                   :show-file-list="false"
                   :on-success="res=>{
-                    skill.icon = res.src
+                    $set(skill,'icon',res.src)
                   }"
                 >
                   <img
@@ -193,8 +193,11 @@
                   v-model="skill.tips"
                 ></el-input>
               </el-form-item>
-              <el-form-item>
-                <el-button type="danger" size="small" @click="model.skills.splice(index,1)">删除</el-button>
+              <el-form-item style="padding-left:10rem">
+                <el-button
+                  type="danger"
+                  @click="model.skills.splice(index,1)"
+                >删除</el-button>
               </el-form-item>
             </el-col>
           </el-row>
