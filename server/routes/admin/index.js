@@ -4,7 +4,6 @@ module.exports = app => {
         mergeParams:true
     })
 
-    
 
     router.post('/',async (req,res)=>{
         const model = await req.Model.create(req.body)
@@ -46,5 +45,5 @@ module.exports = app => {
         const modelname = require('inflection').classify(req.params.resource)
         req.Model = require(`../../models/${modelname}`)
         next()
-    },router)
+    },router)   
 }

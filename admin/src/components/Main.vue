@@ -1,5 +1,5 @@
 <template>
-  <el-container style="height: 500px; border: 1px solid #eee">
+  <el-container style="min-height:100vh; border: 1px solid #eee">
     <el-aside
       width="200px"
       style="background-color: rgb(238, 241, 246)"
@@ -19,6 +19,14 @@
             <template slot="title">装备</template>
             <el-menu-item index="/itemCreate">新建装备</el-menu-item>
             <el-menu-item index="/itemList">装备列表</el-menu-item>
+          </el-menu-item-group>
+        </el-submenu>
+        <el-submenu index="1">
+          <template slot="title"><i class="el-icon-message"></i>英雄管理</template>
+          <el-menu-item-group>
+            <template slot="title">英雄</template>
+            <el-menu-item index="/heroCreate">新建英雄</el-menu-item>
+            <el-menu-item index="/heroList">英雄列表</el-menu-item>
           </el-menu-item-group>
         </el-submenu>
       </el-menu>
