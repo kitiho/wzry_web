@@ -37,6 +37,14 @@
             <el-menu-item index="/articleList">文章列表</el-menu-item>
           </el-menu-item-group>
         </el-submenu>
+        <el-submenu index="1">
+          <template slot="title"><i class="el-icon-message"></i>广告管理</template>
+          <el-menu-item-group>
+            <template slot="title">广告</template>
+            <el-menu-item index="/adCreate">新建广告</el-menu-item>
+            <el-menu-item index="/adList">广告列表</el-menu-item>
+          </el-menu-item-group>
+        </el-submenu>
       </el-menu>
     </el-aside>
 
