@@ -33,7 +33,8 @@
           >
             <el-upload
               class="avatar-uploader"
-              :action="$http.defaults.baseURL + '/uploads'"
+              :action="uploadURL"
+              :headers="getAuthHeader()"
               :show-file-list="false"
               :on-success="res=>{
                 $set(item,'img',res.src)
@@ -54,11 +55,11 @@
             <el-input v-model="item.url"></el-input>
           </el-form-item>
           <el-form-item>
-                <el-button
-                  type="danger"
-                  @click="model.items.splice(index,1)"
-                >删除</el-button>
-              </el-form-item>
+            <el-button
+              type="danger"
+              @click="model.items.splice(index,1)"
+            >删除</el-button>
+          </el-form-item>
         </el-col>
       </el-row>
 

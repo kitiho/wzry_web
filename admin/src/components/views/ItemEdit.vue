@@ -12,7 +12,8 @@
       <el-form-item label="图标" style="display:block">
         <el-upload
           class="avatar-uploader"
-          :action= "$http.defaults.baseURL + '/uploads'"
+          :action= "uploadURL"
+          :headers = "getAuthHeader()"
           :show-file-list="false"
           :on-success="afterUpload"
         >

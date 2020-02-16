@@ -4,7 +4,7 @@
       width="200px"
       style="background-color: rgb(238, 241, 246)"
     >
-      <el-menu router :default-openeds="['1', '3']">
+      <el-menu router default-active="1" unique-opened>
         <el-submenu index="1">
           <template slot="title"><i class="el-icon-message"></i>内容管理</template>
           <el-menu-item-group>
@@ -13,7 +13,7 @@
             <el-menu-item index="/categoryList">分类列表</el-menu-item>
           </el-menu-item-group>
         </el-submenu>
-        <el-submenu index="1">
+        <el-submenu index="2">
           <template slot="title"><i class="el-icon-message"></i>装备管理</template>
           <el-menu-item-group>
             <template slot="title">装备</template>
@@ -21,7 +21,7 @@
             <el-menu-item index="/itemList">装备列表</el-menu-item>
           </el-menu-item-group>
         </el-submenu>
-        <el-submenu index="1">
+        <el-submenu index="3">
           <template slot="title"><i class="el-icon-message"></i>英雄管理</template>
           <el-menu-item-group>
             <template slot="title">英雄</template>
@@ -29,7 +29,7 @@
             <el-menu-item index="/heroList">英雄列表</el-menu-item>
           </el-menu-item-group>
         </el-submenu>
-        <el-submenu index="1">
+        <el-submenu index="4">
           <template slot="title"><i class="el-icon-message"></i>文章管理</template>
           <el-menu-item-group>
             <template slot="title">文章</template>
@@ -37,7 +37,7 @@
             <el-menu-item index="/articleList">文章列表</el-menu-item>
           </el-menu-item-group>
         </el-submenu>
-        <el-submenu index="1">
+        <el-submenu index="5">
           <template slot="title"><i class="el-icon-message"></i>广告管理</template>
           <el-menu-item-group>
             <template slot="title">广告</template>
@@ -45,7 +45,7 @@
             <el-menu-item index="/adList">广告列表</el-menu-item>
           </el-menu-item-group>
         </el-submenu>
-        <el-submenu index="1">
+        <el-submenu index="6">
           <template slot="title"><i class="el-icon-message"></i>用户管理</template>
           <el-menu-item-group>
             <template slot="title">用户</template>

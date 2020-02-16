@@ -5,7 +5,10 @@
       class="demo-form-inline"
       @submit.native.prevent="save"
     >
-      <el-tabs type="border-card">
+      <el-tabs
+        type="border-card"
+        value="first"
+      >
         <el-tab-pane
           label="基本信息"
           name="first"
@@ -26,7 +29,8 @@
           <el-form-item label="头像">
             <el-upload
               class="avatar-uploader"
-              :action="$http.defaults.baseURL + '/uploads'"
+              :action="uploadURL"
+              :headers="getAuthHeader()"
               :show-file-list="false"
               :on-success="afterUpload"
             >
@@ -162,7 +166,8 @@
               <el-form-item label="技能图标">
                 <el-upload
                   class="avatar-uploader"
-                  :action="$http.defaults.baseURL + '/uploads'"
+                  :action="uploadURL"
+                  :headers="getAuthHeader()"
                   :show-file-list="false"
                   :on-success="res=>{
                     $set(skill,'icon',res.src)

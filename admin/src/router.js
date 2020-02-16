@@ -19,7 +19,7 @@ import UserList from './components/views/UserList'
 Vue.use(VueRouter)
 
 const routes = [
-  { path: '/login', component: Login },
+  { path: '/login', component: Login, meta: { isPublic: true } },
   {
     path: '/', component: Main, children: [
       { path: '/categoryEdit/:id', component: CategoryEdit, props: true },
@@ -53,5 +53,10 @@ const routes = [
 const router = new VueRouter({
   routes
 })
-
+router.beforeEach((to, from, next) => {
+  if (!to.meta.isPublic && !localStorage.token) {
+    next('/login')
+  }
+  next()
+})
 export default router

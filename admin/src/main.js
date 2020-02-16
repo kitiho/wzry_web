@@ -17,7 +17,20 @@ Vue.prototype.$http = http
 //引入style.css
 import './assets/style.css'
 Vue.config.productionTip = false
-
+Vue.mixin({
+  computed: {
+    uploadURL() {
+      return this.$http.defaults.baseURL + '/uploads'
+    }
+  },
+  methods: {
+    getAuthHeader() {
+      return {
+        Authorization: `Bearer ${localStorage.token || ''}`
+      }
+    }
+  }
+})
 
 
 new Vue({
