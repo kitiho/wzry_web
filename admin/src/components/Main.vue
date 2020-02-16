@@ -53,11 +53,13 @@
             <el-menu-item index="/userList">用户列表</el-menu-item>
           </el-menu-item-group>
         </el-submenu>
+
       </el-menu>
     </el-aside>
 
     <el-container>
       <el-header style="text-align: right; font-size: 12px">
+        <el-button type="danger" @click="quit">退出登录</el-button>
       </el-header>
       <el-main>
           <router-view></router-view>
@@ -65,6 +67,21 @@
     </el-container>
   </el-container>
 </template>
+
+<script>
+export default {
+  methods:{
+    quit(){
+      this.$router.push('/login')
+      this.$message({
+        message:'退出成功',
+        type:'success'
+      })
+      localStorage.clear()
+    }
+  }
+}
+</script>
 
 <style>
 .el-header {
@@ -77,11 +94,3 @@
   color: #333;
 }
 </style>
-
-<script>
-export default {
-  data() {
-    return {};
-  }
-};
-</script>
