@@ -92,3 +92,11 @@ a {
     }
   }
 }
+
+//边框
+.border-b-t {
+  border-bottom: 3px solid transparent;
+}
+.border-active {
+  border-bottom: 3px solid map-get($map: $colors, $key: 'white');
+}

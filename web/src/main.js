@@ -3,8 +3,11 @@ import App from './App.vue'
 
 //引入scss
 import './assets/scss/style.scss'
+
+import router from './router'
 Vue.config.productionTip = false
 
 new Vue({
-  render: function (h) { return h(App) },
+  router,
+  render: function (h) { return h(App) }
 }).$mount('#app')
