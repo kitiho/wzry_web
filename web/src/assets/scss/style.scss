@@ -1,3 +1,5 @@
+@import "./variable";
+//reset
 * {
   box-sizing: border-box;
   outline: none;
@@ -15,4 +17,78 @@ body {
 a {
   text-decoration: none;
   color: #999;
+}
+//text
+//靠左 居中 靠右
+@each $var in (left, center, right) {
+  .text-#{$var} {
+    text-align: $var;
+  }
+}
+//文字颜色
+@each $colorKey, $color in $colors {
+  .text-#{$colorKey} {
+    color: $color;
+  }
+}
+//背景颜色
+@each $colorKey, $color in $colors {
+  .bg-#{$colorKey} {
+    background-color: $color;
+  }
+}
+//文字尺寸大小
+@each $sizeKey, $size in $sizes {
+  .fs-#{$sizeKey} {
+    font-size: $size * $base-font-size;
+  }
+}
+//flex布局
+.d-flex {
+  display: flex;
+}
+.flex-column {
+  flex-direction: column;
+}
+.flex-1 {
+  flex: 1;
+}
+.flex-grow-1 {
+  flex-grow: 1;
+}
+//justify-content属性
+@each $k, $v in $jc {
+  .jc-#{$k} {
+    justify-content: $v;
+  }
+}
+//justify-content属性
+@each $k, $v in $ai {
+  .ai-#{$k} {
+    align-items: $v;
+  }
+}
+
+//边距
+@each $typeKey, $type in $spacing-types {
+  @each $sizeKey, $size in $spacing-sizes {
+    .#{$typeKey}-#{$sizeKey} {
+      #{$type}: $size * $base-spacing-size;
+    }
+    .#{$typeKey}x-#{$sizeKey} {
+      #{$type}-left: $size * $base-spacing-size;
+      #{$type}-right: $size * $base-spacing-size;
+    }
+    .#{$typeKey}y-#{$sizeKey} {
+      #{$type}-top: $size * $base-spacing-size;
+      #{$type}-bottom: $size * $base-spacing-size;
+    }
+  }
+  @each $directionKey, $direction in $spacing-direction {
+    @each $sizeKey, $size in $spacing-sizes {
+      .#{$typeKey}#{$directionKey}-#{$sizeKey} {
+        #{$type}-#{$direction}: $size * $base-spacing-size;
+      }
+    }
+  }
 }
