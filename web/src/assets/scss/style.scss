@@ -31,6 +31,12 @@ a {
     color: $color;
   }
 }
+//文字省略
+.text-omit{
+  overflow : hidden;
+  text-overflow : ellipsis;
+  white-space : nowrap;
+}
 //背景颜色
 @each $colorKey, $color in $colors {
   .bg-#{$colorKey} {
@@ -178,5 +184,10 @@ a {
     background-position: 47.619% 56.305%;
     width: 18px;
     height: 3px;
+  }
+  &.sprite-news {
+    background-position: 0.138% 50.452%;
+    width: 1rem;
+    height: 1rem;
   }
 }
