@@ -26,6 +26,6 @@ module.exports = mongoose.model('Hero', new mongoose.Schema({
         hero: { type: mongoose.SchemaTypes.ObjectId, ref: 'Hero' },
         description: { type: String }
     }]
-}))
+}),'heros')
 
 

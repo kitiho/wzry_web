@@ -215,25 +215,25 @@
     </card>
     <!-- end of news -->
     <card
-      :categories="categories"
+      :categories="heroCats"
       newHero="https://ossweb-img.qq.com/upload/webplat/info/yxzj/20200108/20796372351730.jpg"
       title="英雄列表"
       icon="hero"
     >
       <template #swiperslide="{category}">
-        <div class="d-flex ai-center jc-around flex-wrap pt-2">
+        <div class="d-flex ai-center  flex-wrap pt-2">
           <div
             class="d-flex flex-column text-black-2 text-center p-2"
             style="width:20%"
-            v-for="(hero,hi) in category.heros"
+            v-for="(hero,hi) in category.heroList"
             :key="hi"
           >
             <img
               class="w-100"
-              :src="hero.heroAvatar"
+              :src="hero.avatar"
               alt=""
             >
-            <span class="pt-2">{{hero.heroName}}</span>
+            <span class="pt-2">{{hero.name}}</span>
           </div>
         </div>
       </template>
@@ -256,393 +256,7 @@ export default {
   },
   data() {
     return {
-      categories: [
-        {
-          catName: "热门",
-          heros: [
-            {
-              heroName: "后羿",
-              heroAvatar:
-                "https://game.gtimg.cn/images/yxzj/img201606/heroimg/169/169.jpg"
-            },
-            {
-              heroName: "韩信",
-              heroAvatar:
-                "https://game.gtimg.cn/images/yxzj/img201606/heroimg/150/150.jpg"
-            },
-            {
-              heroName: "铠",
-              heroAvatar:
-                "https://game.gtimg.cn/images/yxzj/img201606/heroimg/149/149.jpg"
-            },
-            {
-              heroName: "亚瑟",
-              heroAvatar:
-                "https://game.gtimg.cn/images/yxzj/img201606/heroimg/148/148.jpg"
-            },
-            {
-              heroName: "孙悟空",
-              heroAvatar:
-                "https://game.gtimg.cn/images/yxzj/img201606/heroimg/148/148.jpg"
-            },
-            {
-              heroName: "安其拉",
-              heroAvatar:
-                "https://game.gtimg.cn/images/yxzj/img201606/heroimg/146/146.jpg"
-            },
-            {
-              heroName: "鲁班七号",
-              heroAvatar:
-                "https://game.gtimg.cn/images/yxzj/img201606/heroimg/144/144.jpg"
-            },
-            {
-              heroName: "甄姬",
-              heroAvatar:
-                "https://game.gtimg.cn/images/yxzj/img201606/heroimg/144/144.jpg"
-            },
-            {
-              heroName: "妲己",
-              heroAvatar:
-                "https://game.gtimg.cn/images/yxzj/img201606/heroimg/142/142.jpg"
-            },
-            {
-              heroName: "庄周",
-              heroAvatar:
-                "https://game.gtimg.cn/images/yxzj/img201606/heroimg/142/142.jpg"
-            }
-          ]
-        },
-        {
-          catName: "射手",
-          heros: [
-            {
-              heroName: "后羿",
-              heroAvatar:
-                "https://game.gtimg.cn/images/yxzj/img201606/heroimg/169/169.jpg"
-            },
-            {
-              heroName: "韩信",
-              heroAvatar:
-                "https://game.gtimg.cn/images/yxzj/img201606/heroimg/150/150.jpg"
-            },
-            {
-              heroName: "铠",
-              heroAvatar:
-                "https://game.gtimg.cn/images/yxzj/img201606/heroimg/149/149.jpg"
-            },
-            {
-              heroName: "亚瑟",
-              heroAvatar:
-                "https://game.gtimg.cn/images/yxzj/img201606/heroimg/148/148.jpg"
-            },
-            {
-              heroName: "孙悟空",
-              heroAvatar:
-                "https://game.gtimg.cn/images/yxzj/img201606/heroimg/147/147.jpg"
-            },
-            {
-              heroName: "安其拉",
-              heroAvatar:
-                "https://game.gtimg.cn/images/yxzj/img201606/heroimg/146/146.jpg"
-            },
-            {
-              heroName: "鲁班七号",
-              heroAvatar:
-                "https://game.gtimg.cn/images/yxzj/img201606/heroimg/145/145.jpg"
-            },
-            {
-              heroName: "甄姬",
-              heroAvatar:
-                "https://game.gtimg.cn/images/yxzj/img201606/heroimg/144/144.jpg"
-            },
-            {
-              heroName: "妲己",
-              heroAvatar:
-                "https://game.gtimg.cn/images/yxzj/img201606/heroimg/143/143.jpg"
-            },
-            {
-              heroName: "庄周",
-              heroAvatar:
-                "https://game.gtimg.cn/images/yxzj/img201606/heroimg/142/142.jpg"
-            }
-          ]
-        },
-        {
-          catName: "战士",
-          heros: [
-            {
-              heroName: "后羿",
-              heroAvatar:
-                "https://game.gtimg.cn/images/yxzj/img201606/heroimg/169/169.jpg"
-            },
-            {
-              heroName: "韩信",
-              heroAvatar:
-                "https://game.gtimg.cn/images/yxzj/img201606/heroimg/150/150.jpg"
-            },
-            {
-              heroName: "铠",
-              heroAvatar:
-                "https://game.gtimg.cn/images/yxzj/img201606/heroimg/149/149.jpg"
-            },
-            {
-              heroName: "亚瑟",
-              heroAvatar:
-                "https://game.gtimg.cn/images/yxzj/img201606/heroimg/148/148.jpg"
-            },
-            {
-              heroName: "孙悟空",
-              heroAvatar:
-                "https://game.gtimg.cn/images/yxzj/img201606/heroimg/147/147.jpg"
-            },
-            {
-              heroName: "安其拉",
-              heroAvatar:
-                "https://game.gtimg.cn/images/yxzj/img201606/heroimg/146/146.jpg"
-            },
-            {
-              heroName: "鲁班七号",
-              heroAvatar:
-                "https://game.gtimg.cn/images/yxzj/img201606/heroimg/145/145.jpg"
-            },
-            {
-              heroName: "甄姬",
-              heroAvatar:
-                "https://game.gtimg.cn/images/yxzj/img201606/heroimg/144/144.jpg"
-            },
-            {
-              heroName: "妲己",
-              heroAvatar:
-                "https://game.gtimg.cn/images/yxzj/img201606/heroimg/143/143.jpg"
-            },
-            {
-              heroName: "庄周",
-              heroAvatar:
-                "https://game.gtimg.cn/images/yxzj/img201606/heroimg/142/142.jpg"
-            }
-          ]
-        },
-        {
-          catName: "刺客",
-          heros: [
-            {
-              heroName: "后羿",
-              heroAvatar:
-                "https://game.gtimg.cn/images/yxzj/img201606/heroimg/169/169.jpg"
-            },
-            {
-              heroName: "韩信",
-              heroAvatar:
-                "https://game.gtimg.cn/images/yxzj/img201606/heroimg/150/150.jpg"
-            },
-            {
-              heroName: "铠",
-              heroAvatar:
-                "https://game.gtimg.cn/images/yxzj/img201606/heroimg/149/149.jpg"
-            },
-            {
-              heroName: "亚瑟",
-              heroAvatar:
-                "https://game.gtimg.cn/images/yxzj/img201606/heroimg/148/148.jpg"
-            },
-            {
-              heroName: "孙悟空",
-              heroAvatar:
-                "https://game.gtimg.cn/images/yxzj/img201606/heroimg/147/147.jpg"
-            },
-            {
-              heroName: "安其拉",
-              heroAvatar:
-                "https://game.gtimg.cn/images/yxzj/img201606/heroimg/146/146.jpg"
-            },
-            {
-              heroName: "鲁班七号",
-              heroAvatar:
-                "https://game.gtimg.cn/images/yxzj/img201606/heroimg/145/145.jpg"
-            },
-            {
-              heroName: "甄姬",
-              heroAvatar:
-                "https://game.gtimg.cn/images/yxzj/img201606/heroimg/144/144.jpg"
-            },
-            {
-              heroName: "妲己",
-              heroAvatar:
-                "https://game.gtimg.cn/images/yxzj/img201606/heroimg/143/143.jpg"
-            },
-            {
-              heroName: "庄周",
-              heroAvatar:
-                "https://game.gtimg.cn/images/yxzj/img201606/heroimg/142/142.jpg"
-            }
-          ]
-        },
-        {
-          catName: "法师",
-          heros: [
-            {
-              heroName: "后羿",
-              heroAvatar:
-                "https://game.gtimg.cn/images/yxzj/img201606/heroimg/169/169.jpg"
-            },
-            {
-              heroName: "韩信",
-              heroAvatar:
-                "https://game.gtimg.cn/images/yxzj/img201606/heroimg/150/150.jpg"
-            },
-            {
-              heroName: "铠",
-              heroAvatar:
-                "https://game.gtimg.cn/images/yxzj/img201606/heroimg/149/149.jpg"
-            },
-            {
-              heroName: "亚瑟",
-              heroAvatar:
-                "https://game.gtimg.cn/images/yxzj/img201606/heroimg/148/148.jpg"
-            },
-            {
-              heroName: "孙悟空",
-              heroAvatar:
-                "https://game.gtimg.cn/images/yxzj/img201606/heroimg/147/147.jpg"
-            },
-            {
-              heroName: "安其拉",
-              heroAvatar:
-                "https://game.gtimg.cn/images/yxzj/img201606/heroimg/146/146.jpg"
-            },
-            {
-              heroName: "鲁班七号",
-              heroAvatar:
-                "https://game.gtimg.cn/images/yxzj/img201606/heroimg/145/145.jpg"
-            },
-            {
-              heroName: "甄姬",
-              heroAvatar:
-                "https://game.gtimg.cn/images/yxzj/img201606/heroimg/144/144.jpg"
-            },
-            {
-              heroName: "妲己",
-              heroAvatar:
-                "https://game.gtimg.cn/images/yxzj/img201606/heroimg/143/143.jpg"
-            },
-            {
-              heroName: "庄周",
-              heroAvatar:
-                "https://game.gtimg.cn/images/yxzj/img201606/heroimg/142/142.jpg"
-            }
-          ]
-        },
-        {
-          catName: "辅助",
-          heros: [
-            {
-              heroName: "后羿",
-              heroAvatar:
-                "https://game.gtimg.cn/images/yxzj/img201606/heroimg/169/169.jpg"
-            },
-            {
-              heroName: "韩信",
-              heroAvatar:
-                "https://game.gtimg.cn/images/yxzj/img201606/heroimg/150/150.jpg"
-            },
-            {
-              heroName: "铠",
-              heroAvatar:
-                "https://game.gtimg.cn/images/yxzj/img201606/heroimg/149/149.jpg"
-            },
-            {
-              heroName: "亚瑟",
-              heroAvatar:
-                "https://game.gtimg.cn/images/yxzj/img201606/heroimg/148/148.jpg"
-            },
-            {
-              heroName: "孙悟空",
-              heroAvatar:
-                "https://game.gtimg.cn/images/yxzj/img201606/heroimg/147/147.jpg"
-            },
-            {
-              heroName: "安其拉",
-              heroAvatar:
-                "https://game.gtimg.cn/images/yxzj/img201606/heroimg/146/146.jpg"
-            },
-            {
-              heroName: "鲁班七号",
-              heroAvatar:
-                "https://game.gtimg.cn/images/yxzj/img201606/heroimg/145/145.jpg"
-            },
-            {
-              heroName: "甄姬",
-              heroAvatar:
-                "https://game.gtimg.cn/images/yxzj/img201606/heroimg/144/144.jpg"
-            },
-            {
-              heroName: "妲己",
-              heroAvatar:
-                "https://game.gtimg.cn/images/yxzj/img201606/heroimg/143/143.jpg"
-            },
-            {
-              heroName: "庄周",
-              heroAvatar:
-                "https://game.gtimg.cn/images/yxzj/img201606/heroimg/142/142.jpg"
-            }
-          ]
-        },
-        {
-          catName: "打野",
-          heros: [
-            {
-              heroName: "后羿",
-              heroAvatar:
-                "https://game.gtimg.cn/images/yxzj/img201606/heroimg/169/169.jpg"
-            },
-            {
-              heroName: "韩信",
-              heroAvatar:
-                "https://game.gtimg.cn/images/yxzj/img201606/heroimg/150/150.jpg"
-            },
-            {
-              heroName: "铠",
-              heroAvatar:
-                "https://game.gtimg.cn/images/yxzj/img201606/heroimg/149/149.jpg"
-            },
-            {
-              heroName: "亚瑟",
-              heroAvatar:
-                "https://game.gtimg.cn/images/yxzj/img201606/heroimg/148/148.jpg"
-            },
-            {
-              heroName: "孙悟空",
-              heroAvatar:
-                "https://game.gtimg.cn/images/yxzj/img201606/heroimg/147/147.jpg"
-            },
-            {
-              heroName: "安其拉",
-              heroAvatar:
-                "https://game.gtimg.cn/images/yxzj/img201606/heroimg/146/146.jpg"
-            },
-            {
-              heroName: "鲁班七号",
-              heroAvatar:
-                "https://game.gtimg.cn/images/yxzj/img201606/heroimg/145/145.jpg"
-            },
-            {
-              heroName: "甄姬",
-              heroAvatar:
-                "https://game.gtimg.cn/images/yxzj/img201606/heroimg/144/144.jpg"
-            },
-            {
-              heroName: "妲己",
-              heroAvatar:
-                "https://game.gtimg.cn/images/yxzj/img201606/heroimg/143/143.jpg"
-            },
-            {
-              heroName: "庄周",
-              heroAvatar:
-                "https://game.gtimg.cn/images/yxzj/img201606/heroimg/142/142.jpg"
-            }
-          ]
-        }
-      ],
+      heroCats: [],
       date: new Date(),
       newsCats: [],
       swiperOption: {
@@ -662,9 +276,15 @@ export default {
     async fetchNews() {
       const res = await this.$http.get("/news/list");
       this.newsCats = res.data;
-    }
+    },
+    async fetchHeros() {
+      const res = await this.$http.get("/heros/list");
+      this.heroCats = res.data;
+    },
+    
   },
   created() {
+    this.fetchHeros()
     this.fetchNews();
   },
 

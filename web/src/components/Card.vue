@@ -28,6 +28,8 @@
         >{{category.name}}</span>
       </div>
       <swiper
+        :options="swiperOption"
+        style="height: auto"
         ref="mySwiper"
         @slide-change="active = $refs.mySwiper.swiper.realIndex "
       >
@@ -58,7 +60,10 @@ export default {
   },
   data() {
     return {
-      active: 0
+      active: 0,
+      swiperOption: {
+        autoHeight: true //enable auto height
+      }
     };
   },
   computed: {
