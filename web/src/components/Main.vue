@@ -30,6 +30,8 @@ export default {};
 <style lang="scss">
 .topbar {
   position: sticky;
+  top: 0;
+  z-index: 999;
   background: url("../assets/img/index.png") no-repeat 0 87.195%;
   background-size: 375px 455px;
   width: 375px;

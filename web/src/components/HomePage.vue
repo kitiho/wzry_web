@@ -203,16 +203,17 @@
       <template #swiperslide="{category}">
         <div
           class="p-3 fs-sm text-black-1 d-flex jc-center ai-center"
-          v-for="(item,i) in category.newsItem"
+          v-for="(item,i) in category.newsList"
           :key="i"
         >
-          <span class="text-blue-2">[{{category.catName}}]</span>
+          <span class="text-blue-2">[{{item.categoryName}}]</span>
           <span class="px-1">|</span>
           <span class="text-omit flex-1 fs-sm">{{item.title}}</span>
-          <span class="text-grey-2 fs-xs pl-4">{{item.date}}</span>
+          <span class="text-grey-2 fs-xs pl-4">{{date | shortDate}}</span>
         </div>
       </template>
     </card>
+    <!-- end of news -->
     <card
       :categories="categories"
       newHero="https://ossweb-img.qq.com/upload/webplat/info/yxzj/20200108/20796372351730.jpg"
@@ -237,6 +238,7 @@
         </div>
       </template>
     </card>
+    <!-- end of heroList -->
   </div>
 </template>
 
@@ -244,8 +246,14 @@
 import "swiper/dist/css/swiper.css";
 import { swiper, swiperSlide } from "vue-awesome-swiper";
 import Card from "./Card";
+import dayjs from "dayjs";
 export default {
   name: "carrousel",
+  filters: {
+    shortDate(val) {
+      return dayjs(val).format("MM/DD");
+    }
+  },
   data() {
     return {
       categories: [
@@ -635,133 +643,8 @@ export default {
           ]
         }
       ],
-      newsCats: [
-        {
-          catName: "新闻",
-          newsItem: [
-            {
-              title: "体验服爆料丨穿上新盔甲，守护玄雍城！白起优化曝光",
-              date: "02/14"
-            },
-            {
-              title: "体验服爆料丨穿上新盔甲，守护玄雍城！白起优化曝光",
-              date: "02/14"
-            },
-            {
-              title: "体验服爆料丨穿上新盔甲，守护玄雍城！白起优化曝光",
-              date: "02/14"
-            },
-            {
-              title: "体验服爆料丨穿上新盔甲，守护玄雍城！白起优化曝光",
-              date: "02/14"
-            },
-            {
-              title: "体验服爆料丨穿上新盔甲，守护玄雍城！白起优化曝光",
-              date: "02/14"
-            }
-          ]
-        },
-        {
-          catName: "公告",
-          newsItem: [
-            {
-              title: "体验服爆料丨穿上新盔甲，守护玄雍城！白起优化曝光",
-              date: "02/14"
-            },
-            {
-              title: "体验服爆料丨穿上新盔甲，守护玄雍城！白起优化曝光",
-              date: "02/14"
-            },
-            {
-              title: "体验服爆料丨穿上新盔甲，守护玄雍城！白起优化曝光",
-              date: "02/14"
-            },
-            {
-              title: "体验服爆料丨穿上新盔甲，守护玄雍城！白起优化曝光",
-              date: "02/14"
-            },
-            {
-              title: "体验服爆料丨穿上新盔甲，守护玄雍城！白起优化曝光",
-              date: "02/14"
-            }
-          ]
-        },
-        {
-          catName: "活动",
-          newsItem: [
-            {
-              title: "体验服爆料丨穿上新盔甲，守护玄雍城！白起优化曝光",
-              date: "02/14"
-            },
-            {
-              title: "体验服爆料丨穿上新盔甲，守护玄雍城！白起优化曝光",
-              date: "02/14"
-            },
-            {
-              title: "体验服爆料丨穿上新盔甲，守护玄雍城！白起优化曝光",
-              date: "02/14"
-            },
-            {
-              title: "体验服爆料丨穿上新盔甲，守护玄雍城！白起优化曝光",
-              date: "02/14"
-            },
-            {
-              title: "体验服爆料丨穿上新盔甲，守护玄雍城！白起优化曝光",
-              date: "02/14"
-            }
-          ]
-        },
-        {
-          catName: "赛事",
-          newsItem: [
-            {
-              title: "体验服爆料丨穿上新盔甲，守护玄雍城！白起优化曝光",
-              date: "02/14"
-            },
-            {
-              title: "体验服爆料丨穿上新盔甲，守护玄雍城！白起优化曝光",
-              date: "02/14"
-            },
-            {
-              title: "体验服爆料丨穿上新盔甲，守护玄雍城！白起优化曝光",
-              date: "02/14"
-            },
-            {
-              title: "体验服爆料丨穿上新盔甲，守护玄雍城！白起优化曝光",
-              date: "02/14"
-            },
-            {
-              title: "体验服爆料丨穿上新盔甲，守护玄雍城！白起优化曝光",
-              date: "02/14"
-            }
-          ]
-        },
-        {
-          catName: "热门",
-          newsItem: [
-            {
-              title: "体验服爆料丨穿上新盔甲，守护玄雍城！白起优化曝光",
-              date: "02/14"
-            },
-            {
-              title: "体验服爆料丨穿上新盔甲，守护玄雍城！白起优化曝光",
-              date: "02/14"
-            },
-            {
-              title: "体验服爆料丨穿上新盔甲，守护玄雍城！白起优化曝光",
-              date: "02/14"
-            },
-            {
-              title: "体验服爆料丨穿上新盔甲，守护玄雍城！白起优化曝光",
-              date: "02/14"
-            },
-            {
-              title: "体验服爆料丨穿上新盔甲，守护玄雍城！白起优化曝光",
-              date: "02/14"
-            }
-          ]
-        }
-      ],
+      date: new Date(),
+      newsCats: [],
       swiperOption: {
         autoHeight: true,
         loop: true,
@@ -775,6 +658,16 @@ export default {
       }
     };
   },
+  methods: {
+    async fetchNews() {
+      const res = await this.$http.get("/news/list");
+      this.newsCats = res.data;
+    }
+  },
+  created() {
+    this.fetchNews();
+  },
+
   computed: {},
   mounted() {},
   components: {

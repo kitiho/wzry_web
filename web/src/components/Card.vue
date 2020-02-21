@@ -25,7 +25,7 @@
           class="py-1 border-b-t"
           @click="$refs.mySwiper.swiper.slideTo(i);"
           :class="{active : active === i}"
-        >{{category.catName}}</span>
+        >{{category.name}}</span>
       </div>
       <swiper
         ref="mySwiper"

@@ -4,7 +4,11 @@
       width="200px"
       style="background-color: rgb(238, 241, 246)"
     >
-      <el-menu router default-active="1" unique-opened>
+      <el-menu
+        router
+        default-active="1"
+        unique-opened
+      >
         <el-submenu index="1">
           <template slot="title"><i class="el-icon-message"></i>内容管理</template>
           <el-menu-item-group>
@@ -59,10 +63,13 @@
 
     <el-container>
       <el-header style="text-align: right; font-size: 12px">
-        <el-button type="danger" @click="quit">退出登录</el-button>
+        <el-button
+          type="danger"
+          @click="quit"
+        >退出登录</el-button>
       </el-header>
       <el-main>
-          <router-view></router-view>
+        <router-view :key="$route.path"></router-view>
       </el-main>
     </el-container>
   </el-container>
@@ -70,17 +77,17 @@
 
 <script>
 export default {
-  methods:{
-    quit(){
-      this.$router.push('/login')
+  methods: {
+    quit() {
+      this.$router.push("/login");
       this.$message({
-        message:'退出成功',
-        type:'success'
-      })
-      localStorage.clear()
+        message: "退出成功",
+        type: "success"
+      });
+      localStorage.clear();
     }
   }
-}
+};
 </script>
 
 <style>
