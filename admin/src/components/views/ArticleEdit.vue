@@ -62,7 +62,7 @@ export default {
         await this.$http.post("/articles", this.model);
       }
 
-      this.$router.push("/articlesList");
+      this.$router.push("/articleList");
 
       this.$message({
         type: "success",

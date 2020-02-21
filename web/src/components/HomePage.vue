@@ -201,7 +201,9 @@
       icon="news"
     >
       <template #swiperslide="{category}">
-        <div
+        <router-link
+          :tag="div"
+          :to="`/article/${item._id}`"
           class="p-3 fs-sm text-black-1 d-flex jc-center ai-center"
           v-for="(item,i) in category.newsList"
           :key="i"
@@ -210,7 +212,7 @@
           <span class="px-1">|</span>
           <span class="text-omit flex-1 fs-sm">{{item.title}}</span>
           <span class="text-grey-2 fs-xs pl-4">{{date | shortDate}}</span>
-        </div>
+        </router-link>
       </template>
     </card>
     <!-- end of news -->
@@ -280,11 +282,10 @@ export default {
     async fetchHeros() {
       const res = await this.$http.get("/heros/list");
       this.heroCats = res.data;
-    },
-    
+    }
   },
   created() {
-    this.fetchHeros()
+    this.fetchHeros();
     this.fetchNews();
   },
 

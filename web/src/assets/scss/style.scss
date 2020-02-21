@@ -18,6 +18,9 @@ a {
   text-decoration: none;
   color: #999;
 }
+p {
+  line-height: 1.5em;
+}
 //text
 //靠左 居中 靠右
 @each $var in (left, center, right) {
@@ -32,10 +35,10 @@ a {
   }
 }
 //文字省略
-.text-omit{
-  overflow : hidden;
-  text-overflow : ellipsis;
-  white-space : nowrap;
+.text-omit {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 //背景颜色
 @each $colorKey, $color in $colors {

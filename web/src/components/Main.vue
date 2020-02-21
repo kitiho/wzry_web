@@ -8,18 +8,33 @@
       </div>
       <div class="download mr-4"></div>
     </div>
-    <div class="nav bg-yellow d-flex jc-around ai-center text-white fs-sm" style="height:3rem">
+    <div
+      class="nav bg-yellow d-flex jc-around ai-center text-white fs-sm"
+      style="height:3rem"
+    >
       <div>
-      <router-link tag="div" to="/homePage" class="py-1 border-b-t border-active">首页</router-link>
+        <router-link
+          tag="div"
+          to="/homePage"
+          class="py-1 border-b-t border-active"
+        >首页</router-link>
       </div>
       <div>
-      <router-link tag="div" to="/homePage" class="py-1 border-b-t">攻略中心</router-link>
+        <router-link
+          tag="div"
+          to="/homePage"
+          class="py-1 border-b-t"
+        >攻略中心</router-link>
       </div>
-      <div >
-      <router-link tag="div" to="/homePage" class="py-1 border-b-t">赛事中心</router-link>
+      <div>
+        <router-link
+          tag="div"
+          to="/homePage"
+          class="py-1 border-b-t"
+        >赛事中心</router-link>
       </div>
     </div>
-    <router-view></router-view>
+    <router-view :key="$route.path"></router-view>
   </div>
 </template>
 
